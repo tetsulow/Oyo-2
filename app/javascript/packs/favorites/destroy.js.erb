@@ -1,0 +1,7 @@
+document.addEventListener('turbolinks:load', () => {
+
+ $("#favorite_<%= @book.id %>").html("<%= j(render 'favorites/btn', book: @book, user: current_user) %>");
+
+  //ここにjsの記述を追加
+
+})
