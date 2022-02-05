@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :favorited_books, through: :favorites, source: :book
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
+  has_many :rooms, through: :user_rooms
   has_one_attached :profile_image
 
   # Include default devise modules. Others available are:
