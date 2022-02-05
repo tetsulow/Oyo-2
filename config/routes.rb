@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'chats/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'searches/search'
  devise_for :users
   root :to =>"homes#top"
   get "home/top"=>"homes#top"
   get "home/about"=>"homes#about"
+  get 'chat/:id', to: 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
 
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
     resource :favorites, only: [:create, :destroy]
@@ -16,5 +19,6 @@ Rails.application.routes.draw do
   	get 'followers' => 'relationships#followers', as: 'followers'
   end
   get '/search', to: 'searches#search'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
