@@ -10,9 +10,11 @@ import "channels"
 import 'jquery'
 import "popper.js"
 import "bootstrap"
+// import raty from 'raty-js'
+
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application"
-// import raty from 'raty-js'
+
 
 
 
